@@ -37,7 +37,7 @@ header img {
   margin: 20px auto;        /* center it horizontally with some spacing */
   display: block;
   font-size: 16px;
-  border: 2px solid #4CAF50;  /* central market green */
+  border: 2px solid #c27f68;  /* central market green */
   border-radius: 8px;
   outline: none;
   transition: all 0.3s ease;
@@ -109,3 +109,4 @@ img{
     
 
 }
+
