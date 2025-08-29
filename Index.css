@@ -5,6 +5,7 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 section {
@@ -34,7 +35,7 @@ header img {
   width: 100%;              /* full width */
   max-width: 400px;         /* but not too wide */
   padding: 12px 20px;       /* comfortable padding */
-  margin: 20px auto;        /* center it horizontally with some spacing */
+  margin: 200px 0px 0px 0px;        /* center it horizontally with some spacing */
   display: block;
   font-size: 16px;
   border: 2px solid #c27f68;  /* central market green */
@@ -109,4 +110,5 @@ img{
     
 
 }
+
 
