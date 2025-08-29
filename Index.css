@@ -30,6 +30,33 @@ header img {
   
 }
 
+#search {
+  width: 100%;              /* full width */
+  max-width: 400px;         /* but not too wide */
+  padding: 12px 20px;       /* comfortable padding */
+  margin: 20px auto;        /* center it horizontally with some spacing */
+  display: block;
+  font-size: 16px;
+  border: 2px solid #4CAF50;  /* central market green */
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background-color: #fefefc; /* light neutral background */
+  color: #333;
+}
+
+#search::placeholder {
+  color: #4CAF50;           /* green placeholder text */
+  font-weight: 500;
+}
+
+#search:focus {
+  border-color: #3a7d32;    /* darker green on focus */
+  box-shadow: 0 0 8px rgba(58, 125, 50, 0.5);
+}
+
+
 
 .producttile {
     background-color: #c27f68;
@@ -80,4 +107,5 @@ img{
     height: 10rem ;
     
     
+
 }
