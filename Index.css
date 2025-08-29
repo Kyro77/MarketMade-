@@ -1,0 +1,83 @@
+html, body {
+    height: fit-content;
+    margin: 0;
+    background-color: #a4634e !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    margin-top: 5rem;
+    margin: 13rem;
+    height: fit-content ;
+    width: 60vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 3 columns */
+    grid-template-rows: repeat(2, 1fr);    /* 2 rows */
+    gap: 2rem   ;
+
+    place-items: center;   /* centers grid items inside their cells */
+    place-content: center; /* centers the entire grid in the viewport */
+}
+
+header img {
+  width: 100vw;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+}
+
+
+.producttile {
+    background-color: #c27f68;
+    border-radius: 5px;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Helvetica;
+    padding: 10px;
+    flex-direction: column;
+
+}
+
+
+.Textinfo{
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
+    height: 100%;
+
+}
+
+h2{
+    color: rgb(29, 29, 29);
+    font-size: 1.3rem;
+    margin: 3px;
+}
+h3{
+    font-size: .9rem;
+    color: rgb(48, 48, 48);
+    margin: 3px;
+}
+
+p{
+    color: rgb(48, 48, 48);
+    margin: 0px;
+    font-size: .8rem;
+}
+
+
+img{
+    border-radius: 5px;
+    color: black;
+    width: 10rem;
+    height: 10rem ;
+    
+    
+}
