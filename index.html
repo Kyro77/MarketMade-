@@ -8,13 +8,30 @@
 </head>
 <body>
 
-    
-    <header><img src="Screenshot 2025-08-14 105531.png" alt=""></header>
+    <header><img src="/Screenshot 2025-08-14 105531.png" alt=""></header>
+    <div>
+    <!-- Search -->
     <input type="text" id="search" placeholder="Search products...">
-    
-<section>
 
+    <!-- Filters -->
+    <div class="Filtrelist">
+       
+        <select id="stallFilter"><option value="">All Stalls</option></select>
+        
+
+        <!-- Categories -->
+        <div class="categories">
+            <button class="filterBtn" data-category="fruitveg">Fruit & Veg</button>
+            <button class="filterBtn" data-category="meatseafood">Meat & Seafood</button>
+            <button class="filterBtn" data-category="bakery">Bakery</button>
+            <button class="filterBtn" data-category="dairy">Dairy</button>
+            
+        </div>
+    </div>
+</div>
     
+
+<section>
 
 
     <div class="producttile">
@@ -176,127 +193,6 @@
         <p><strong>Stall:</strong> <span class="stall-number"></span></p>
     </div>
 </div>
-    <div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-    <div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-    <div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-    <div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-    <div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-    <div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-    <div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-    <div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-    <div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-    <div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-    <div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-    <div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-    <div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-    <div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-    <div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-    
 
 
     
@@ -305,25 +201,61 @@
 </section>
 
 <script>
- // Helper function to shuffle an array
+    // Helper: shuffle an array
+function shuffleArray(array) {
+  return array.sort(() => Math.random() - 0.5);
+}
+
+// Wait for the page to load
+document.addEventListener("DOMContentLoaded", () => {
+  const tiles = document.querySelectorAll(".producttile");
+
+  // Load products.json
+  fetch("products.json")
+    .then(res => res.json())
+    .then(products => {
+      const shuffled = shuffleArray([...products]); // shuffle products
+
+      tiles.forEach((tile, index) => {
+        const product = shuffled[index % shuffled.length]; // loop if fewer than tiles
+        if (!product) return;
+
+        // Fill the tile
+        const img = tile.querySelector("img");
+        const name = tile.querySelector("h2");
+        const stallName = tile.querySelector("h3");
+        const stallNumber = tile.querySelector(".stall-number");
+
+        img.src = product["img link"];
+        img.alt = product.Item;
+
+        name.textContent = product.Item;
+        stallName.textContent = product["Stall name"];
+        if (stallNumber) {
+          stallNumber.textContent = product["Stall Number"];
+        }
+      });
+    })
+    .catch(err => console.error("Error loading products.json:", err));
+});
+
+// Helper: shuffle array
 function shuffleArray(array) {
   return array.sort(() => Math.random() - 0.5);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   const tiles = document.querySelectorAll(".producttile");
-  const searchInput = document.getElementById("search");
+  const stallFilter = document.getElementById("stallFilter");
 
-  // Load products.json
   fetch("products.json")
     .then(res => res.json())
     .then(products => {
-      // Shuffle products
       const shuffled = shuffleArray([...products]);
 
       // Populate tiles
       tiles.forEach((tile, index) => {
-        const product = shuffled[index % shuffled.length]; // loop if fewer products than tiles
+        const product = shuffled[index % shuffled.length];
         if (!product) return;
 
         const img = tile.querySelector("img");
@@ -338,22 +270,32 @@ document.addEventListener("DOMContentLoaded", () => {
         stallName.textContent = product["Stall name"];
         if (stallNumber) stallNumber.textContent = product["Stall Number"];
 
-        // Store the product name on the tile for search
-        tile.dataset.name = product.Item.toLowerCase();
+        // Store product's stall for filtering
+        tile.dataset.stall = product["Stall name"].toLowerCase();
       });
 
-      // Search functionality
-      searchInput.addEventListener("input", (e) => {
-        const query = e.target.value.toLowerCase();
+      // --- Populate dropdown with unique stall names ---
+      const uniqueStalls = [...new Set(products.map(p => p["Stall name"]))].sort();
+      uniqueStalls.forEach(stall => {
+        const option = document.createElement("option");
+        option.value = stall.toLowerCase();
+        option.textContent = stall;
+        stallFilter.appendChild(option);
+      });
+
+      // --- Stall filter ---
+      stallFilter.addEventListener("change", () => {
+        const selectedStall = stallFilter.value;
 
         tiles.forEach(tile => {
-          const name = tile.dataset.name || "";
-          tile.style.display = name.includes(query) ? "" : "none";
+          const stall = tile.dataset.stall || "";
+          tile.style.display = (!selectedStall || stall === selectedStall) ? "" : "none";
         });
       });
     })
     .catch(err => console.error("Error loading products.json:", err));
 });
+
 
    
 
@@ -364,7 +306,6 @@ document.addEventListener("DOMContentLoaded", () => {
     
 </body>
 </html>
-
 
 
 
