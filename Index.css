@@ -87,7 +87,7 @@ header img {
     margin-top: 10px;
 }
 
-.Filtrelist button {
+.filterBtn {
     background-color: #c27f68;
     color: white;
     border: none;
@@ -98,10 +98,9 @@ header img {
     transition: 0.2s ease;
 }
 
-.Filtrelist button:hover {
+.filterBtn:hover {
     background-color: #ad735f; /* darker red */
 }
-
 
 .producttile {
     background-color: #c27f68;
@@ -154,6 +153,7 @@ img{
     
 
 }
+
 
 
 
