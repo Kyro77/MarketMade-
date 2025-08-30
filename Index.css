@@ -10,7 +10,7 @@ html, body {
 
 section {
     margin-top: 5rem;
-    margin: 13rem;
+    margin: 4rem;
     height: fit-content ;
     width: 60vw;
     display: grid;
@@ -38,7 +38,7 @@ header img {
   margin: 200px 0px 0px 0px;        /* center it horizontally with some spacing */
   display: block;
   font-size: 16px;
-  border: 2px solid #c27f68;  /* central market green */
+  border: 2px solid #c27f68;  
   border-radius: 8px;
   outline: none;
   transition: all 0.3s ease;
@@ -48,15 +48,59 @@ header img {
 }
 
 #search::placeholder {
-  color: #4CAF50;           /* green placeholder text */
+  color: #494444;           /* green placeholder text */
   font-weight: 500;
 }
 
 #search:focus {
-  border-color: #3a7d32;    /* darker green on focus */
-  box-shadow: 0 0 8px rgba(58, 125, 50, 0.5);
+  border-color: #ad735f;    /* darker green on focus */
+  box-shadow: 0 0 8px rgba(48, 48, 48, 0.5);
+}
+#stallFilter {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 20px;
+  margin: 20px 0;
+  display: block;
+  font-size: 16px;
+  border: 2px solid #c27f68;
+  border-radius: 8px;
+  outline: none;
+  background-color: #fefefc;
+  color: #333;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+#stallFilter:focus {
+  border-color: #ad735f;
+  box-shadow: 0 0 5px rgba(48, 48, 48, 0.4);
+}
+
+
+
+
+
+.Filtrelist {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.Filtrelist button {
+    background-color: #c27f68;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.Filtrelist button:hover {
+    background-color: #ad735f; /* darker red */
+}
 
 
 .producttile {
@@ -110,5 +154,7 @@ img{
     
 
 }
+
+
 
 
