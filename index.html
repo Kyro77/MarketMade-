@@ -8,16 +8,18 @@
 </head>
 <body>
 
-    <header><img src="Screenshot 2025-08-14 105531.png" alt=""></header>
-    <div>
-    <!-- Search -->
-    <input type="text" id="search" placeholder="Search products...">
+    <header>
+        <img src="/Screenshot 2025-08-14 105531.png" alt="Adelaide Central Market Logo">
+    </header>
 
-    <!-- Filters -->
-    <div class="Filtrelist">
-       
-        <select id="stallFilter"><option value="">All Stalls</option></select>
-        
+    <div class="filters-container">
+        <!-- Search -->
+        <input type="text" id="search" placeholder="Search products...">
+
+        <!-- Stall Filter -->
+        <select id="stallFilter">
+            <option value="">All Stalls</option>
+        </select>
 
         <!-- Categories -->
         <div class="categories">
@@ -25,255 +27,112 @@
             <button class="filterBtn" data-category="meatseafood">Meat & Seafood</button>
             <button class="filterBtn" data-category="bakery">Bakery</button>
             <button class="filterBtn" data-category="dairy">Dairy</button>
-            
         </div>
     </div>
-</div>
-    
 
-<section>
+    <!-- Container for product tiles -->
+    <section class="productContainer"></section>
 
+    <!-- Load More button -->
+    <button id="loadMoreBtn">Load More</button>
 
-    <div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-<div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-<div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-<div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-<div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-<div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-<div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-<div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-<div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-<div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-<div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-<div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-<div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-<div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-<div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-<div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-<div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-<div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
-<div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div><div class="producttile">
-    <img src="" alt="">
-    <div class="Textinfo">
-        <h2>Name</h2>
-        <h3>Stall name</h3>
-        <p><strong>Stall:</strong> <span class="stall-number"></span></p>
-    </div>
-</div>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const container = document.querySelector(".productContainer");
+        const searchInput = document.getElementById("search");
+        const stallFilter = document.getElementById("stallFilter");
+        const categoryButtons = document.querySelectorAll(".filterBtn");
+        const loadMoreBtn = document.getElementById("loadMoreBtn");
 
+        let allProducts = [];
+        let filteredProducts = [];
+        let renderedCount = 0;
+        const pageSize = 30;
+        let activeCategory = "";
 
-    
+        // Fetch JSON
+        fetch("products.json")
+            .then(res => res.json())
+            .then(products => {
+                allProducts = products;
+                filteredProducts = [...allProducts];
 
-    
-</section>
+                populateStallDropdown();
+                renderTiles();
+            });
 
-<script>
-// Helper: shuffle array
-function shuffleArray(array) {
-  return array.sort(() => Math.random() - 0.5);
-}
+        // Populate stall dropdown
+        function populateStallDropdown() {
+            const uniqueStalls = [...new Set(allProducts.map(p => p["Stall name"]))].sort();
+            uniqueStalls.forEach(stall => {
+                const option = document.createElement("option");
+                option.value = stall.toLowerCase();
+                option.textContent = stall;
+                stallFilter.appendChild(option);
+            });
+        }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const tiles = document.querySelectorAll(".producttile");
-  const searchInput = document.getElementById("search");
-  const stallFilter = document.getElementById("stallFilter");
+        // Render tiles
+        function renderTiles(reset = true) {
+            if (reset) {
+                container.innerHTML = "";
+                renderedCount = 0;
+            }
 
-  fetch("products.json")
-    .then(res => res.json())
-    .then(products => {
-      const shuffled = shuffleArray([...products]);
+            const toRender = filteredProducts.slice(renderedCount, renderedCount + pageSize);
+            toRender.forEach(product => {
+                const tile = document.createElement("div");
+                tile.classList.add("producttile");
+                tile.dataset.stall = product["Stall name"].toLowerCase();
+                tile.dataset.name = product.Item.toLowerCase();
+                tile.dataset.category = (product.Category || "").toLowerCase();
 
-      // --- Fill product tiles ---
-      tiles.forEach((tile, index) => {
-        const product = shuffled[index % shuffled.length];
-        if (!product) return;
+                tile.innerHTML = `
+                    <img src="${product["img link"]}" alt="${product.Item}">
+                    <div class="Textinfo">
+                        <h2>${product.Item}</h2>
+                        <h3>${product["Stall name"]}</h3>
+                        <p><strong>Stall:</strong> <span class="stall-number">${product["Stall Number"] || ""}</span></p>
+                    </div>
+                `;
 
-        const img = tile.querySelector("img");
-        const name = tile.querySelector("h2");
-        const stallName = tile.querySelector("h3");
-        const stallNumber = tile.querySelector(".stall-number");
+                container.appendChild(tile);
+            });
 
-        img.src = product["img link"];
-        img.alt = product.Item;
+            renderedCount += toRender.length;
+            loadMoreBtn.style.display = (renderedCount >= filteredProducts.length) ? "none" : "block";
+        }
 
-        name.textContent = product.Item;
-        stallName.textContent = product["Stall name"];
-        if (stallNumber) stallNumber.textContent = product["Stall Number"];
+        // Apply filters
+        function applyFilters() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const selectedStall = stallFilter.value;
 
-        // Store searchable/filterable values
-        tile.dataset.name = product.Item.toLowerCase();
-        tile.dataset.stall = product["Stall name"].toLowerCase();
-      });
+            filteredProducts = allProducts.filter(p => {
+                const matchesSearch = p.Item.toLowerCase().includes(searchTerm);
+                const matchesStall = !selectedStall || p["Stall name"].toLowerCase() === selectedStall;
+                const matchesCategory = !activeCategory || (p.Category || "").toLowerCase() === activeCategory;
+                return matchesSearch && matchesStall && matchesCategory;
+            });
 
-      // --- Populate dropdown with unique stall names ---
-      const uniqueStalls = [...new Set(products.map(p => p["Stall name"]))].sort();
-      uniqueStalls.forEach(stall => {
-        const option = document.createElement("option");
-        option.value = stall.toLowerCase();
-        option.textContent = stall;
-        stallFilter.appendChild(option);
-      });
+            renderTiles(true);
+        }
 
-      // --- Filtering function (search + stall) ---
-      function applyFilters() {
-        const searchTerm = searchInput.value.toLowerCase();
-        const selectedStall = stallFilter.value;
+        // Event listeners
+        searchInput.addEventListener("input", applyFilters);
+        stallFilter.addEventListener("change", applyFilters);
 
-        tiles.forEach(tile => {
-          const matchesSearch = tile.dataset.name.includes(searchTerm);
-          const matchesStall = !selectedStall || tile.dataset.stall === selectedStall;
-
-          tile.style.display = (matchesSearch && matchesStall) ? "" : "none";
+        categoryButtons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                activeCategory = btn.dataset.category;
+                applyFilters();
+            });
         });
-      }
 
-      // --- Hook up events ---
-      searchInput.addEventListener("input", applyFilters);
-      stallFilter.addEventListener("change", applyFilters);
-    })
-    .catch(err => console.error("Error loading products.json:", err));
-});
+        loadMoreBtn.addEventListener("click", () => renderTiles(false));
+    });
+    </script>
 
-   
-
-</script>
-    
-
-    
-    
 </body>
 </html>
 
