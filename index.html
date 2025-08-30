@@ -201,44 +201,6 @@
 </section>
 
 <script>
-    // Helper: shuffle an array
-function shuffleArray(array) {
-  return array.sort(() => Math.random() - 0.5);
-}
-
-// Wait for the page to load
-document.addEventListener("DOMContentLoaded", () => {
-  const tiles = document.querySelectorAll(".producttile");
-
-  // Load products.json
-  fetch("products.json")
-    .then(res => res.json())
-    .then(products => {
-      const shuffled = shuffleArray([...products]); // shuffle products
-
-      tiles.forEach((tile, index) => {
-        const product = shuffled[index % shuffled.length]; // loop if fewer than tiles
-        if (!product) return;
-
-        // Fill the tile
-        const img = tile.querySelector("img");
-        const name = tile.querySelector("h2");
-        const stallName = tile.querySelector("h3");
-        const stallNumber = tile.querySelector(".stall-number");
-
-        img.src = product["img link"];
-        img.alt = product.Item;
-
-        name.textContent = product.Item;
-        stallName.textContent = product["Stall name"];
-        if (stallNumber) {
-          stallNumber.textContent = product["Stall Number"];
-        }
-      });
-    })
-    .catch(err => console.error("Error loading products.json:", err));
-});
-
 // Helper: shuffle array
 function shuffleArray(array) {
   return array.sort(() => Math.random() - 0.5);
@@ -246,6 +208,7 @@ function shuffleArray(array) {
 
 document.addEventListener("DOMContentLoaded", () => {
   const tiles = document.querySelectorAll(".producttile");
+  const searchInput = document.getElementById("search");
   const stallFilter = document.getElementById("stallFilter");
 
   fetch("products.json")
@@ -253,7 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(products => {
       const shuffled = shuffleArray([...products]);
 
-      // Populate tiles
+      // --- Fill product tiles ---
       tiles.forEach((tile, index) => {
         const product = shuffled[index % shuffled.length];
         if (!product) return;
@@ -270,7 +233,8 @@ document.addEventListener("DOMContentLoaded", () => {
         stallName.textContent = product["Stall name"];
         if (stallNumber) stallNumber.textContent = product["Stall Number"];
 
-        // Store product's stall for filtering
+        // Store searchable/filterable values
+        tile.dataset.name = product.Item.toLowerCase();
         tile.dataset.stall = product["Stall name"].toLowerCase();
       });
 
@@ -283,19 +247,25 @@ document.addEventListener("DOMContentLoaded", () => {
         stallFilter.appendChild(option);
       });
 
-      // --- Stall filter ---
-      stallFilter.addEventListener("change", () => {
+      // --- Filtering function (search + stall) ---
+      function applyFilters() {
+        const searchTerm = searchInput.value.toLowerCase();
         const selectedStall = stallFilter.value;
 
         tiles.forEach(tile => {
-          const stall = tile.dataset.stall || "";
-          tile.style.display = (!selectedStall || stall === selectedStall) ? "" : "none";
+          const matchesSearch = tile.dataset.name.includes(searchTerm);
+          const matchesStall = !selectedStall || tile.dataset.stall === selectedStall;
+
+          tile.style.display = (matchesSearch && matchesStall) ? "" : "none";
         });
-      });
+      }
+
+      // --- Hook up events ---
+      searchInput.addEventListener("input", applyFilters);
+      stallFilter.addEventListener("change", applyFilters);
     })
     .catch(err => console.error("Error loading products.json:", err));
 });
-
 
    
 
@@ -306,6 +276,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
 </body>
 </html>
+
 
 
 
